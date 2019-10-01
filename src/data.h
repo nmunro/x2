@@ -1,6 +1,5 @@
 // Data structures
-struct node
-{
+struct node {
 	GtkWidget *Box;
 	gchar *Name;			// File name
 	gchar *Location;		// File location
@@ -29,7 +28,7 @@ struct node
 	GtkWidget *ReplaceBox;
 	GtkWidget *Search2;
 	GtkWidget *Replace2;
-	
+
 	// Jump to line stuff
 	GtkWidget *JumpLbl;
 	GtkWidget *JumpSpin;
@@ -43,21 +42,18 @@ struct node
 	GtkWidget *templatelbl;
 };
 
-struct prefs_data
-{
+struct prefs_data {
 	GtkWidget *Notebook;
 	GtkToolItem *tb_cmd;
 	struct prefs *pref;
 };
 
-struct str_data
-{
+struct str_data {
 	GtkWidget *Widget;
 	GtkWidget *Notebook;
 };
 
-struct prefs
-{
+struct prefs {
 	GtkWidget *Prefs_Win;
 	GtkWidget *IconView;
 	GtkListStore *IconModel;
@@ -75,14 +71,14 @@ struct prefs
 	GtkWidget *Licence;
 	GtkTextBuffer *Licence_Buffer;
 	GtkWidget *Scroller;
-	GtkWidget *Font;	
+	GtkWidget *Font;
 	GtkWidget *FontFrame;
-	GtkWidget *UIBox;  
+	GtkWidget *UIBox;
 	GtkWidget *Programming_Box;
 	GtkWidget *ProgrammingFrame;
 	GtkWidget *Programming_Check;
 	GtkWidget *Highlight_Check;
-	GtkWidget *Lines_Check;	
+	GtkWidget *Lines_Check;
 	GtkWidget *Terminal_Check;
 	GtkWidget *FindFrame;
 	GtkWidget *FindBox;
@@ -93,8 +89,7 @@ struct prefs
 	GtkWidget *SearchLbl;
 };
 
-struct settings
-{
+struct settings {
 	gchar *prog_features;
 	gchar *highlighting;
 	gchar *lines;
@@ -105,8 +100,7 @@ struct settings
 	gchar *highlightline;
 };
 
-struct search_data
-{
+struct search_data {
 	struct node *tmp;
 	gchar *textmark;
 	GtkWidget *Notebook;
@@ -115,31 +109,28 @@ struct search_data
 
 // Varibles
 gboolean prefs_win_open = FALSE;
-struct settings *sets; 
+struct settings *sets;
 GtkWidget *window = NULL;
 gint ids = 0;
 
-enum 
-{
+enum {
 	TARGET_UTF8_STRING,
 	TARGET_COMPOUND_TEXT,
 	TARGET_PLAIN,
 	TARGET_URI_LIST,
 };
 
-enum
-{
+enum {
 	COL_DISPLAY_NAME,
 	COL_PIXBUF,
 	NUM_COLS
 };
 
-static GtkTargetEntry targets[ ] =
-{
-	{ "UTF8_STRING", 0, TARGET_UTF8_STRING },
-	{ "COMPOUND_TEXT", 0, TARGET_COMPOUND_TEXT },
-	{ "text/plain", 0, TARGET_PLAIN },
-	{ "text/uri-list", 0, TARGET_URI_LIST }
+static GtkTargetEntry targets[] = {
+	{"UTF8_STRING", 0, TARGET_UTF8_STRING},
+	{"COMPOUND_TEXT", 0, TARGET_COMPOUND_TEXT},
+	{"text/plain", 0, TARGET_PLAIN},
+	{"text/uri-list", 0, TARGET_URI_LIST}
 };
 
-static guint n_targets = G_N_ELEMENTS( targets );
+static guint n_targets = G_N_ELEMENTS(targets);
